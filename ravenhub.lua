@@ -286,7 +286,7 @@ _G.antikick = false
 _G.farmillusionist = false
 
 getgenv().worlds = {}
-getgenv().SelectedWorld = worlds[1]
+
 
 for _,v in pairs(game:GetService("Workspace").Worlds:GetChildren()) do
     if v.Name ~= "EventHub" and v.Name ~= "Tower" and v.Name ~= "Dungeon" and v.Name ~= "TimeChamber" then
@@ -294,9 +294,11 @@ for _,v in pairs(game:GetService("Workspace").Worlds:GetChildren()) do
     end
 end
 
+getgenv().SelectedWorld = worlds[1]
 
 
-function superopenegg()
+
+local function superopenegg()
     while _G.superautoopen do
         if table.find(worlds, game:GetService("Players")[game.Players.LocalPlayer.Name].World.Value) then
             local username = game.Players.LocalPlayer.Name
@@ -337,7 +339,7 @@ end
 
 
 
-function summonsummerdungeon()
+local function summonsummerdungeon()
     local args = {
         [1] = "Size",
         [2] = 2
@@ -359,7 +361,7 @@ end
 
 
 
-function teleport(place)
+local function teleport(place)
     local player = game.Players.LocalPlayer
     player.Character.HumanoidRootPart.CFrame = place
 end
